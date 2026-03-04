@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Wedding of [Groom] & [Bride]</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display for Names (Elegant Serif), Cinzel Decorative for Luxury accents, Lato for clean modern body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons for minimal clean icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Particles Container -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Background Music Player (YouTube) -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <div id="youtube-audio" style="display:none"></div>
+    <button id="music-btn" class="music-control hidden" aria-label="Play/Pause Music">
+        <i class="ph ph-speaker-high"></i>
+    </button>
+
+    <!-- 1. Opening Gate (Luxury Entrance) -->
+    <section id="opening-gate" class="opening-gate">
+        <div class="gate-door gate-left">
+            <div class="gate-pattern"></div>
+        </div>
+        <div class="gate-door gate-right">
+            <div class="gate-pattern"></div>
+        </div>
+
+        <div class="gate-content">
+            <div class="bismillah-calligraphy">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            <p class="greeting">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+
+            <div class="guest-info">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <h3 id="guest-name">Tamu Kehormatan</h3>
+            </div>
+
+            <button id="btn-open-invitation" class="btn-primary gold-glow">
+                <i class="ph ph-envelope-open"></i> Buka Undangan
+            </button>
+        </div>
+    </section>
+
+    <main id="main-content" class="hidden">
+
+        <!-- 2. Hero Section Royal -->
+        <section class="hero-section reveal-on-scroll">
+            <div class="hero-frame gold-border">
+                <div class="hero-content">
+                    <p class="subtitle">The Royal Wedding Of</p>
+                    <h1 class="couple-names">
+                        <span>Maulana Jamaludin</span>
+                        <span class="ampersand">&</span>
+                        <span>Rani Marlina</span>
+                    </h1>
+
+                    <!-- Countdown Premium Glassmorphism -->
+                    <div class="countdown-container glass-panel">
+                        <div class="countdown-item">
+                            <span id="days" class="number">00</span>
+                            <span class="label">Hari</span>
+                        </div>
+                        <div class="countdown-divider">:</div>
+                        <div class="countdown-item">
+                            <span id="hours" class="number">00</span>
+                            <span class="label">Jam</span>
+                        </div>
+                        <div class="countdown-divider">:</div>
+                        <div class="countdown-item">
+                            <span id="minutes" class="number">00</span>
+                            <span class="label">Menit</span>
+                        </div>
+                        <div class="countdown-divider">:</div>
+                        <div class="countdown-item">
+                            <span id="seconds" class="number">00</span>
+                            <span class="label">Detik</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <p>Scroll untuk melihat detail</p>
+                <i class="ph ph-caret-down bounce"></i>
+            </div>
+        </section>
+
+        <!-- 3. Ayat Suci Al-Qur'an (Elegant Frame) -->
+        <section class="quran-section reveal-on-scroll">
+            <div class="ornate-divider top"></div>
+            <div class="content-wrapper">
+                <p class="arabic-text">
+                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ
+                    بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+                </p>
+                <p class="translation">
+                    "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu
+                    sendiri supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+                </p>
+                <p class="surah-ref">(QS. Ar-Rum: 21)</p>
+            </div>
+            <div class="ornate-divider bottom"></div>
+        </section>
+
+        <!-- 4. Detail Acara (Luxury Card) -->
+        <section class="events-section reveal-on-scroll">
+            <h2 class="section-title">Rangkaian Acara</h2>
+
+            <div class="events-container">
+                <!-- Akad Card -->
+                <div class="event-card glass-panel luxury-hover">
+                    <div class="card-icon">
+                        <i class="ph ph-mosque"></i>
+                    </div>
+                    <h3>Akad Nikah</h3>
+                    <div class="event-details">
+                        <div class="detail-row">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>Sabtu, 28 maret 2026</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="ph ph-clock"></i>
+                            <span>08.00 WIB - Selesai</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Tempat Acara<br>Sesuai titik koordinat map</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resepsi Card -->
+                <div class="event-card glass-panel luxury-hover">
+                    <div class="card-icon">
+                        <i class="ph ph-crown"></i>
+                    </div>
+                    <h3>Resepsi Pernikahan</h3>
+                    <div class="event-details">
+                        <div class="detail-row">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>Sabtu, 28 Maret 2026</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="ph ph-clock"></i>
+                            <span>11.00 WIB - 14.00 WIB</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Tempat Acara<br>Sesuai titik koordinat map</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Google Maps Section -->
+        <section class="maps-section reveal-on-scroll">
+            <h2 class="section-title">Lokasi Acara</h2>
+            <div class="map-container gold-border glass-panel">
+                <iframe src="https://maps.google.com/maps?q=-7.036739,107.928933&hl=id&z=15&output=embed" width="100%"
+                    height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(110%);"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/i8qSp9sFHmKmZxh26" target="_blank" class="btn-secondary">
+                <i class="ph ph-navigation-arrow"></i> Buka di Google Maps
+            </a>
+        </section>
+
+        <!-- 6. Doa-Doa Pernikahan (Luxury Prayer) -->
+        <section class="prayer-section reveal-on-scroll">
+            <div class="prayer-container cream-bg gold-border shadow-soft">
+                <h2 class="section-title dark-text">Doa Restu</h2>
+
+                <div class="prayer-item">
+                    <h4 class="prayer-title">Doa Rasulullah ﷺ</h4>
+                    <p class="arabic-text dark-text">بَارَكَ اللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِيْ
+                        خَيْرٍ</p>
+                    <p class="translation dark-text">"Semoga Allah memberkahimu dan memberkahi atasmu serta mengumpulkan
+                        kalian berdua dalam kebaikan."</p>
+                </div>
+
+                <div class="prayer-divider"><i class="ph ph-star-four"></i></div>
+
+                <div class="prayer-item">
+                    <h4 class="prayer-title">Doa Keluarga Sakinah</h4>
+                    <p class="arabic-text dark-text">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ
+                        أَعْيُنٍ</p>
+                    <p class="translation dark-text">"Ya Tuhan kami, anugerahkanlah kepada kami pasangan dan keturunan
+                        sebagai penyejuk hati."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Digital Gift / Amplop Digital -->
+        <section class="gift-section reveal-on-scroll">
+            <h2 class="section-title">Amplop Digital</h2>
+            <p
+                style="text-align: center; margin-bottom: 2rem; color: var(--text-light); opacity: 0.9; max-width: 600px; margin-inline: auto;">
+                Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda
+                kasih Anda, Anda dapat memberi kado secara cashless.
+            </p>
+
+            <div class="gift-container">
+                <!-- SeaBank -->
+                <div class="bank-card glass-panel luxury-hover">
+                    <div class="bank-logo">
+                        <i class="ph ph-bank"></i>
+                        <h4>SeaBank</h4>
+                    </div>
+                    <div class="account-details">
+                        <p class="account-number" id="norek-seabank">90135736404</p>
+                        <p class="account-name">a.n Rani Marlina</p>
+                    </div>
+                    <button class="btn-copy btn-secondary w-100" data-nomer="90135736404">
+                        <i class="ph ph-copy"></i> Salin Nomor Rekening
+                    </button>
+                </div>
+
+                <!-- DANA -->
+                <div class="bank-card glass-panel luxury-hover">
+                    <div class="bank-logo">
+                        <i class="ph ph-wallet"></i>
+                        <h4>DANA</h4>
+                    </div>
+                    <div class="account-details">
+                        <p class="account-number" id="norek-dana">088218329383</p>
+                        <p class="account-name">a.n Maulana Jamaludin</p>
+                    </div>
+                    <button class="btn-copy btn-secondary w-100" data-nomer="088218329383">
+                        <i class="ph ph-copy"></i> Salin Nomor DANA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. RSVP Premium Form -->
+        <section class="rsvp-section reveal-on-scroll">
+            <h2 class="section-title">RSVP & Ucapan</h2>
+            <div class="rsvp-container glass-panel form-hover-glow">
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attendance">Konfirmasi Kehadiran</label>
+                        <select id="attendance" required>
+                            <option value="" disabled selected>Pilih kehadiran</option>
+                            <option value="hadir">Ya, Saya akan hadir</option>
+                            <option value="tidak">Maaf, saya tidak bisa hadir</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Jumlah Tamu</label>
+                        <select id="guests" required>
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Ucapan & Doa</label>
+                        <textarea id="message" rows="4" placeholder="Tulis ucapan dan doa untuk kedua mempelai"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-100">
+                        <i class="ph ph-paper-plane-tilt"></i> Kirim RSVP
+                    </button>
+
+                    <div id="rsvp-success" class="success-message hidden">
+                        <i class="ph ph-check-circle"></i>
+                        <p>Terima kasih atas konfirmasi dan doa Anda.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Ucapan Carousel/List -->
+            <div class="wishes-container glass-panel mt-2" id="wishes-list">
+                <!-- Data will be populated here -->
+            </div>
+        </section>
+
+        <!-- 8. Penutup Elegan -->
+        <section class="closing-section reveal-on-scroll">
+            <div class="closing-content">
+                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan
+                    memberikan doa restu.</p>
+                <p class="closing-greeting">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+
+                <h1 class="couple-names small">Maulana & Rani</h1>
+                <p class="family-names">Kel. Besar Bpk. Jajah Saepudin & Ibu Mumu Marpuah<br>Kel. Besar Bpk. Maman
+                    Suparman & Ibu Dadah Siti Jubaedah</p>
+            </div>
+            <div class="final-ornament">
+                <i class="ph ph-infinity"></i>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
