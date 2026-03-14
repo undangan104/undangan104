@@ -335,7 +335,7 @@ window.onYouTubeIframeAPIReady = function () {
             'showinfo': 0,
             'rel': 0,
             'loop': 1,
-            'playlist': 'oZKK8SZnqOY'
+            'playlist': '8bWRU2ipOwA'
         }
     });
 };
